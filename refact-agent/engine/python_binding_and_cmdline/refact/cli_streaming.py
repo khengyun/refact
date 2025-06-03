@@ -133,7 +133,7 @@ def process_streaming_data(data: Dict[str, Any], deltas_collector: Optional[chat
             msg = chat_client.Message.model_validate(data)
 
         replace_last_user = False
-        if msg.role == "user" or msg.role == "system'":
+        if msg.role == "user" or msg.role == "system":
             if len(streaming_messages) > 0:
                 if streaming_messages[-1].role == "user":
                     replace_last_user = True
